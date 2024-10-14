@@ -1,0 +1,103 @@
+/* Full screen background images */
+.bg-img {
+  position: absolute;
+  width: 100%; /* Cover full width */
+  height: 90%; /* Cover full height */
+  background-size: cover;
+  background-position: center;
+  transition: transform 1s ease-in-out; /* Smooth transition for sliding */
+  transform: translateX(100%); /* Start off-screen to the right */
+}
+
+/* Active image */
+.bg-img.active {
+  transform: translateX(0); /* Center image */
+}
+
+/* Image sliding out */
+.bg-img.slide-out {
+  transform: translateX(-100%); /* Slide out to the left */
+}
+
+/* Image sliding in */
+.bg-img.slide-in {
+  transform: translateX(100%); /* Slide in from the right */
+}
+
+/* Adjust the z-index to ensure the active image appears on top */
+.bg-img.active,
+.bg-img.slide-in {
+  z-index: 2; /* Higher z-index for the active and sliding-in images */
+}
+
+.bg-img.slide-out {
+  z-index: 1; /* Lower z-index for sliding-out images */
+}
+
+/* Blur effect at the bottom */
+.bg-img::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50%; /* Adjust height as needed for blur effect */
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0)
+  ); /* Fading effect */
+  z-index: 1; /* Make sure it's below the text but above the image */
+}
+
+.fade {
+  width: 98%;
+}
+
+.fade:hover h1 {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.fade:hover .hidden-content {
+  opacity: 1;
+  visibility: visible;
+}
+
+.bg {
+  background-color: #06081f;
+}
+
+.bg-section {
+  height: 120dvh;
+}
+
+.bg-clip {
+  background-color: #06081f;
+}
+
+.leading {
+  width: 160px;
+  height: 80px;
+}
+
+gb-last {
+  height: 150dvh;
+}
+
+.image {
+  width: 500px;
+}
+
+.bg-first {
+  height: 1080px;
+}
+
+.bg-contact {
+  height: 70dvh;
+}
+
+.line {
+  width: 40%;
+  height: 50px
+}
